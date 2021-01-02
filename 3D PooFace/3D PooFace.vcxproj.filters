@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Gfx">
+      <UniqueIdentifier>{f965d4fb-7722-4af6-9dc1-da931c203690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx">
+      <UniqueIdentifier>{818d7769-2cf9-4cff-a953-c727f5a9fd64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Gfx\Modelos">
+      <UniqueIdentifier>{c4560c4d-5a3b-4f41-b499-d9c9629ec3e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx\Modelos">
+      <UniqueIdentifier>{a032b75f-df1d-4ebf-8d40-ccc0e07b8dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controles">
+      <UniqueIdentifier>{7f01beb9-f017-4c41-95f0-eccf9c446ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controles">
+      <UniqueIdentifier>{9bdf8278-6c94-4abb-962d-f903a2ea9211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders 2D">
+      <UniqueIdentifier>{364ce6d5-e3a7-4bff-b2e9-10fb182207be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders 3D">
+      <UniqueIdentifier>{18034a78-5204-4474-aabf-50b2ce881068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jogo">
+      <UniqueIdentifier>{deb5fbf0-ad45-485e-9a6c-968c0394e3cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jogo">
+      <UniqueIdentifier>{5501987b-ceb7-456d-989a-bd0e8a745916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Gfx\2D">
+      <UniqueIdentifier>{b53d070b-375a-4165-8625-228c99a1797e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx\2D">
+      <UniqueIdentifier>{5905e321-c27f-4a8f-9fbd-af487a377a49}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jogo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXC.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderizavel.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="Textura.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedQuad.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Cubo.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Modelo.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="ControleXB.cpp">
+      <Filter>Source Files\Controles</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Controles</Filter>
+    </ClCompile>
+    <ClCompile Include="Teclado.cpp">
+      <Filter>Source Files\Controles</Filter>
+    </ClCompile>
+    <ClCompile Include="Face.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="Mapa.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="Poop.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="Chao.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Fonte.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Jogo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXC.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderizavel.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="Textura.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="Cubo.h">
+      <Filter>Header Files\Gfx\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="Modelo.h">
+      <Filter>Header Files\Gfx\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderizador.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="ControleXB.h">
+      <Filter>Header Files\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="Teclado.h">
+      <Filter>Header Files\Controles</Filter>
+    </ClInclude>
+    <ClInclude Include="Face.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Mapa.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Poop.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Chao.h">
+      <Filter>Header Files\Gfx\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedQuad.h">
+      <Filter>Header Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Fonte.h">
+      <Filter>Header Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2DPixelShader.hlsl">
+      <Filter>Resource Files\Shaders 2D</Filter>
+    </None>
+    <None Include="3DPixelShader.hlsl">
+      <Filter>Resource Files\Shaders 3D</Filter>
+    </None>
+    <None Include="3DVertexShader.hlsl">
+      <Filter>Resource Files\Shaders 3D</Filter>
+    </None>
+    <None Include="2DVertexShader.hlsl">
+      <Filter>Resource Files\Shaders 2D</Filter>
+    </None>
+  </ItemGroup>
+</Project>
