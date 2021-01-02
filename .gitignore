@@ -1,2 +1,8 @@
 .vs
 3D PooFace.sdf
+x64
+3D PooFace/x64
+3D PooFace/Release
+3D PooFace/Debug
+Release
+Debug
