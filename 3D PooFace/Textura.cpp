@@ -182,7 +182,8 @@ void Textura::LoadImageData(const std::wstring& nomeArq, char** pPixels, UINT* p
 		{
 			Gdiplus::Color c;
 			bitmap.GetPixel(x, y, &c);
-			reinterpret_cast<unsigned int*>(pBuffer)[(y * width) + x] = c.GetValue();
+			const unsigned int color = c.GetB() << 16 | c.GetG() << 8  | c.GetR() << 0 | 0xFF000000;
+			reinterpret_cast<unsigned int*>(pBuffer)[(y * width) + x] = color;
 
 		}
 	}
