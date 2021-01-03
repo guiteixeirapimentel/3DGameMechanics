@@ -18,6 +18,7 @@ void Poop::Renderizar(DirectXC* pDirectX) const
 	DirectX::XMFLOAT4 poss = { cPos.x, cPos.y, cPos.z, 1.0f };
 
 	DirectX::XMMATRIX mTransRot = DirectX::XMMatrixTranslationFromVector(DirectX::XMLoadFloat4(&poss));
+	mTransRot = DirectX::XMMatrixMultiply(DirectX::XMMatrixRotationX(0.0f), mTransRot);
 	DirectX::XMStoreFloat4x4(&worldMatrix, mTransRot);
 
 	DirectX::XMFLOAT4X4 worldInvTranspose;
@@ -48,6 +49,8 @@ void Poop::Atualizar()
 	{
 		cTempo += 0.05f;
 	}
+
+	
 }
 
 bool Poop::TestarColisaoFace(const Face* pFace) const

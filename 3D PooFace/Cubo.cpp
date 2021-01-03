@@ -1,6 +1,18 @@
 #include "Cubo.h"
 
-Cubo::Cubo(std::string nomeTextura, float altura, float largura, float profundidade, DirectXC& dxd)
+Cubo::Cubo(const std::string& nomeTextura, float altura, float largura, float profundidade, DirectXC& dxd)
+{	
+	LoadVertexStuff(altura, largura, profundidade, dxd);
+	cPTextura = new Textura(dxd, nomeTextura);
+}
+
+Cubo::Cubo(const std::wstring& nomeTextura, float altura, float largura, float profundidade, DirectXC& dxd)
+{
+	LoadVertexStuff(altura, largura, profundidade, dxd);
+	cPTextura = new Textura(dxd, nomeTextura);
+}
+
+void Cubo::LoadVertexStuff(float altura, float largura, float profundidade, DirectXC& dxd)
 {
 	//Vertex3D v[24];
 	std::vector<Vertex3D> v;
@@ -100,10 +112,10 @@ Cubo::Cubo(std::string nomeTextura, float altura, float largura, float profundid
 	cMaterial.Ambient = DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	cMaterial.Diffuse = DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	cMaterial.Specular = DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 32.0f);
-
-	cPTextura = new Textura(dxd, nomeTextura);
 }
 
 Cubo::~Cubo()
 {
+	ReleaseCOM(cPVertexBuffer);
+	ReleaseCOM(cPIndexBuffer);
 }

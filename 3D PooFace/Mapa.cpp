@@ -2,7 +2,7 @@
 
 Mapa::Mapa(float comprimento, float largura, DirectXC* pDirectX)
 	:
-	cChao(largura, comprimento, L"Data\\Textures\\grasstexture.jpg", *pDirectX)
+	cChao(largura, comprimento, "Data\\Textures\\pooface.tex", *pDirectX)
 {
 }
 

@@ -9,7 +9,7 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cJoystick(joystick),
 	cam({ 0.0f, 0.0f, -5.0f, 1.0f }, { 0.0f , 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f, 0.0f, 0.0f }, dxd),
 	cFace({ 25.0f, 0.0f, 25.0f }, &dxd),
-	cPoopCubo("Data\\Textures\\poopoo.tex", 2.5f, 2.5f, 2.5f, dxd),
+	cPoopCubo(L"Data\\Textures\\boxTexture.png", 2.5f, 2.5f, 2.5f, dxd),
 	cMapa(50.0f, 50.0f, &dxd),
 	cMousePrecionado(false),
 	cPosMouseAnt({ 0.0f, 0.0f }),
@@ -143,7 +143,7 @@ void Jogo::Renderizar()
 
 	dxd.Desligar3D();
 
-	std::string s = std::to_string(cBostasComidas) + "/" + std::to_string(cNBostas);
+	std::string s = "Grid map feature - "+std::to_string(cBostasComidas) + "/" + std::to_string(cNBostas);
 
 	cFFixedSys.EscreverFrase(s, { dxd.PegarLargura() / 2.0f, 0.0f }, { 13.0f, 24.0f }, Fonte::CENTRO, &dxd);
 
