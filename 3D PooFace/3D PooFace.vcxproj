@@ -152,6 +152,7 @@
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Fonte.cpp" />
     <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="GDIPlusManager.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mapa.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Face.h" />
     <ClInclude Include="Fonte.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="GDIPlusManager.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Mapa.h" />
     <ClInclude Include="Modelo.h" />

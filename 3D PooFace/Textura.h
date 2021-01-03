@@ -6,7 +6,11 @@
 class Textura
 {
 public:
-	Textura(DirectXC& dxd, std::string nomeArqTextura);
+	// Using ".TEX" file type.
+	Textura(DirectXC& dxd, const std::string& nomeArqTextura);
+	// Using GDI to get imagem (png, jpeg, etc)
+	Textura(DirectXC& dxd, const std::wstring& nomeArqTextura);
+
 	~Textura();
 
 	ID3D11ShaderResourceView *PegarTextura() const;
@@ -15,7 +19,8 @@ public:
 	UINT PegarAltura() const;
 
 private:
-	void PegarDataImg(std::string nomeArq, char **data, UINT *largura, UINT *altura);
+	void PegarDataImg(const std::string& nomeArq, char **data, UINT *largura, UINT *altura);
+	void LoadImageData(const std::wstring& nomeArq, char **data, UINT *largura, UINT *altura);
 private:
 	ID3D11ShaderResourceView* cPTextura;
 

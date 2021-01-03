@@ -1,6 +1,6 @@
 #include "Chao.h"
 
-Chao::Chao(float largura, float comprimento, std::string nomeTextura, DirectXC& dxd)
+Chao::Chao(float largura, float comprimento, const std::wstring& nomeTextura, DirectXC& dxd)
 {
 	std::vector<Vertex3D> v;
 	//v.resize(UINT(largura * comprimento) * 4);

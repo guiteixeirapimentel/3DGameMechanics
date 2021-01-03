@@ -108,6 +108,9 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GDIPlusManager.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GDIPlusManager.h">
+      <Filter>Header Files\Gfx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
