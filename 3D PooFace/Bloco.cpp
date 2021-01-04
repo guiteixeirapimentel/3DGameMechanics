@@ -1,19 +1,31 @@
-#include "Mapa.h"
+#include "Bloco.h"
 
-Mapa::Mapa(float comprimento, float largura, DirectXC* pDirectX)
+
+Bloco::Bloco(const std::wstring& arqTextura, DirectXC& dxd)
 	:
-	cChao(largura, comprimento, L"Data\\Textures\\grasstexture.jpg", *pDirectX)
+	cCubo(arqTextura, 1.0f, 1.0f, 1.0f, dxd)
 {
+
+}
+Bloco::~Bloco()
+{
+
 }
 
-Mapa::~Mapa()
-{}
+void Bloco::SetPosition(const DirectX::XMFLOAT4& pos)
+{
+	cPos = pos;
+}
 
-void Mapa::Renderizar(DirectXC* pDirectX) const
+void Bloco::Renderizar(DirectXC* pDirectX) const
 {
 	DirectX::XMFLOAT4X4 worldMatrix;
+	
+	DirectX::XMFLOAT4 poss = { cPos.x, cPos.y, cPos.z, 1.0f };
 
-	DirectX::XMStoreFloat4x4(&worldMatrix, DirectX::XMMatrixIdentity());
+	DirectX::XMMATRIX mTransRot = DirectX::XMMatrixTranslationFromVector(DirectX::XMLoadFloat4(&poss));
+	mTransRot = DirectX::XMMatrixMultiply(DirectX::XMMatrixRotationX(0.0f), mTransRot);
+	DirectX::XMStoreFloat4x4(&worldMatrix, mTransRot);
 
 	DirectX::XMFLOAT4X4 worldInvTranspose;
 	DirectX::XMMATRIX A = DirectX::XMLoadFloat4x4(&worldMatrix);
@@ -28,5 +40,5 @@ void Mapa::Renderizar(DirectXC* pDirectX) const
 	DirectX::XMFLOAT4X4 worldViewProj;
 	DirectX::XMStoreFloat4x4(&worldViewProj, worldViewProjM);
 
-	cChao.Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
+	cCubo.Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
 }

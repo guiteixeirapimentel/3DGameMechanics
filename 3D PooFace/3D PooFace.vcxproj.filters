@@ -111,6 +111,15 @@
     <ClCompile Include="GDIPlusManager.cpp">
       <Filter>Source Files\Gfx</Filter>
     </ClCompile>
+    <ClCompile Include="Bloco.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoGrama.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoPedra.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -172,6 +181,18 @@
     </ClInclude>
     <ClInclude Include="GDIPlusManager.h">
       <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="MapaBlocos.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Bloco.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoGrama.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoPedra.h">
+      <Filter>Header Files\Jogo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

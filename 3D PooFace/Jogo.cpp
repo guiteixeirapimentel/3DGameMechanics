@@ -16,8 +16,14 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cFFixedSys("Data\\Fonts\\Consolas13x24L.tex", 13, 24, &dxd),
 	cImgGameOver("Data\\Textures\\GameOver.tex", dxd.PegarLargura() / 2.0f, dxd.PegarAltura() / 2.0f, { 0.5f, 0.5f }, &dxd),
 	cNBostas(100),
-	cBostasComidas(0)
+	cBostasComidas(0),
+
+	cBlocoPedra(dxd),
+	cBlocoGrama(dxd)
 {
+	cBlocoGrama.SetPosition({ 25.0f, 0.0f , 25.0f, 1.0f });
+	cBlocoPedra.SetPosition({ 27.0f, 0.0f , 25.0f, 1.0f });
+
 	cFart = audio.CreateSound("Data\\Sounds\\farty.wav");
 	cTinkle = audio.CreateSound("Data\\Sounds\\tinkle.wav");
 
@@ -135,6 +141,11 @@ void Jogo::Renderizar()
 	cam.Renderizar(&cMapa);
 
 	cam.Renderizar(&cFace);
+
+	cam.Renderizar(&cBlocoGrama);
+	cam.Renderizar(&cBlocoPedra);
+
+	
 
 	for (UINT i = 0; i < cBostas.size(); i++)
 	{

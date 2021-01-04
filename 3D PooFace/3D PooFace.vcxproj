@@ -144,6 +144,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bloco.cpp" />
+    <ClCompile Include="BlocoGrama.cpp" />
+    <ClCompile Include="BlocoPedra.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chao.cpp" />
     <ClCompile Include="ControleXB.cpp" />
@@ -166,6 +169,10 @@
     <ClCompile Include="TexturedQuad.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bloco.h" />
+    <ClInclude Include="BlocoGrama.h" />
+    <ClInclude Include="BlocoPedra.h" />
+    <ClInclude Include="MapaBlocos.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chao.h" />
     <ClInclude Include="ControleXB.h" />
