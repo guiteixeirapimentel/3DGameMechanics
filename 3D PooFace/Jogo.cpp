@@ -17,13 +17,8 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cImgGameOver("Data\\Textures\\GameOver.tex", dxd.PegarLargura() / 2.0f, dxd.PegarAltura() / 2.0f, { 0.5f, 0.5f }, &dxd),
 	cNBostas(100),
 	cBostasComidas(0),
-
-	cBlocoPedra(dxd),
-	cBlocoGrama(dxd)
+	cMapaBlocos(20, 64, 20, &dxd) // http://www.rastertek.com/dx11tut37.html
 {
-	cBlocoGrama.SetPosition({ 25.0f, 0.0f , 25.0f, 1.0f });
-	cBlocoPedra.SetPosition({ 27.0f, 0.0f , 25.0f, 1.0f });
-
 	cFart = audio.CreateSound("Data\\Sounds\\farty.wav");
 	cTinkle = audio.CreateSound("Data\\Sounds\\tinkle.wav");
 
@@ -141,11 +136,8 @@ void Jogo::Renderizar()
 	cam.Renderizar(&cMapa);
 
 	cam.Renderizar(&cFace);
-
-	cam.Renderizar(&cBlocoGrama);
-	cam.Renderizar(&cBlocoPedra);
-
 	
+	cam.Renderizar(&cMapaBlocos);
 
 	for (UINT i = 0; i < cBostas.size(); i++)
 	{

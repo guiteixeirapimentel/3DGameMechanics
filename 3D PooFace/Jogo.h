@@ -18,8 +18,7 @@
 
 #include "Sound.h"
 
-#include "BlocoPedra.h"
-#include "BlocoGrama.h"
+#include "MapaBlocos.h"
 
 class Jogo
 {
@@ -57,8 +56,7 @@ private:
 
 	Cubo cPoopCubo;
 
-	BlocoPedra cBlocoPedra;
-	BlocoGrama cBlocoGrama;
+	MapaBlocos cMapaBlocos;
 
 	Mapa cMapa;
 

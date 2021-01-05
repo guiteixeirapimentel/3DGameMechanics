@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bloco.cpp" />
+    <ClCompile Include="BlocoAr.cpp" />
     <ClCompile Include="BlocoGrama.cpp" />
     <ClCompile Include="BlocoPedra.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mapa.cpp" />
+    <ClCompile Include="MapaBlocos.cpp" />
     <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Poop.cpp" />
@@ -170,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bloco.h" />
+    <ClInclude Include="BlocoAr.h" />
     <ClInclude Include="BlocoGrama.h" />
     <ClInclude Include="BlocoPedra.h" />
     <ClInclude Include="MapaBlocos.h" />

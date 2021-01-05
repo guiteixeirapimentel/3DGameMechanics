@@ -12,6 +12,8 @@ public:
 
 	void Renderizar(DirectXC* pDirectX) const override;
 
+	virtual bool DeveRenderizar() const;
+
 protected:
 	Cubo cCubo;
 

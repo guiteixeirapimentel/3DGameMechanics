@@ -120,6 +120,12 @@
     <ClCompile Include="BlocoPedra.cpp">
       <Filter>Source Files\Jogo</Filter>
     </ClCompile>
+    <ClCompile Include="MapaBlocos.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoAr.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h">
@@ -192,6 +198,9 @@
       <Filter>Header Files\Jogo</Filter>
     </ClInclude>
     <ClInclude Include="BlocoPedra.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoAr.h">
       <Filter>Header Files\Jogo</Filter>
     </ClInclude>
   </ItemGroup>

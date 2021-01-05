@@ -42,3 +42,8 @@ void Bloco::Renderizar(DirectXC* pDirectX) const
 
 	cCubo.Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
 }
+
+bool Bloco::DeveRenderizar() const
+{
+	return true;
+}
