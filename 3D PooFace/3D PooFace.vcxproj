@@ -162,6 +162,7 @@
     <ClCompile Include="Mapa.cpp" />
     <ClCompile Include="MapaBlocos.cpp" />
     <ClCompile Include="Modelo.cpp" />
+    <ClCompile Include="ModeloInstancia.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Renderizavel.cpp" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Teclado.cpp" />
     <ClCompile Include="Textura.cpp" />
     <ClCompile Include="TexturedQuad.cpp" />
+    <ClCompile Include="VasoPlantaBananeira.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bloco.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Mapa.h" />
     <ClInclude Include="Modelo.h" />
+    <ClInclude Include="ModeloInstancia.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Poop.h" />
     <ClInclude Include="Renderizador.h" />
@@ -196,6 +199,7 @@
     <ClInclude Include="Teclado.h" />
     <ClInclude Include="Textura.h" />
     <ClInclude Include="TexturedQuad.h" />
+    <ClInclude Include="VasoPlantaBananeira.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="2DPixelShader.hlsl">

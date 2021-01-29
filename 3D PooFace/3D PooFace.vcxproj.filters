@@ -72,9 +72,6 @@
     <ClCompile Include="Textura.cpp">
       <Filter>Source Files\Gfx</Filter>
     </ClCompile>
-    <ClCompile Include="TexturedQuad.cpp">
-      <Filter>Source Files\Gfx\Modelos</Filter>
-    </ClCompile>
     <ClCompile Include="Cubo.cpp">
       <Filter>Source Files\Gfx\Modelos</Filter>
     </ClCompile>
@@ -124,6 +121,15 @@
       <Filter>Source Files\Jogo</Filter>
     </ClCompile>
     <ClCompile Include="BlocoAr.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="ModeloInstancia.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedQuad.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="VasoPlantaBananeira.cpp">
       <Filter>Source Files\Jogo</Filter>
     </ClCompile>
   </ItemGroup>
@@ -201,6 +207,12 @@
       <Filter>Header Files\Jogo</Filter>
     </ClInclude>
     <ClInclude Include="BlocoAr.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModeloInstancia.h">
+      <Filter>Header Files\Gfx\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="VasoPlantaBananeira.h">
       <Filter>Header Files\Jogo</Filter>
     </ClInclude>
   </ItemGroup>

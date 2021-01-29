@@ -1,6 +1,6 @@
-#include "Modelo.h"
+#include "ModeloInstancia.h"
 
-Modelo::Modelo(DirectXC& dxd, std::string nomeArqModelo, std::wstring nomeArqTextura)
+ModeloInstancia::ModeloInstancia(DirectXC& dxd, std::string nomeArqModelo, std::string nomeArqTextura)
 	:
 	cPIndexBuffer(NULL),
 	cPVertexBuffer(NULL),
@@ -122,7 +122,7 @@ Modelo::Modelo(DirectXC& dxd, std::string nomeArqModelo, std::wstring nomeArqTex
 
 		std::vector<Vertex3D> vertices;
 		for (std::vector<Vertex3D>::reverse_iterator i = verticesTemp.rbegin();
-		i != verticesTemp.rend(); i++)
+			i != verticesTemp.rend(); i++)
 		{
 			Vertex3D v = *i;
 			vertices.push_back(v);
@@ -157,12 +157,12 @@ Modelo::Modelo(DirectXC& dxd, std::string nomeArqModelo, std::wstring nomeArqTex
 
 	cMaterial.Ambient = DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	cMaterial.Diffuse = DirectX::XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
-	cMaterial.Specular = DirectX::XMFLOAT4(0.0f, 0.0f, 0.0f, 32.0f);
+	cMaterial.Specular = DirectX::XMFLOAT4(1.0f, 1.0f, 1.0f, 32.0f);
 
 	cPTextura = new Textura(dxd, nomeArqTextura);
 }
 
-Modelo::Modelo()
+ModeloInstancia::ModeloInstancia()
 	:
 	cPIndexBuffer(NULL),
 	cPVertexBuffer(NULL),
@@ -171,7 +171,7 @@ Modelo::Modelo()
 	cIndexNum(0)
 {}
 
-Modelo::~Modelo()
+ModeloInstancia::~ModeloInstancia()
 {
 	ReleaseCOM(cPVertexBuffer);
 	ReleaseCOM(cPIndexBuffer);
@@ -183,7 +183,7 @@ Modelo::~Modelo()
 	}
 }
 
-void Modelo::Renderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 worldInvTranspose, DirectX::XMFLOAT4X4 worldViewProj,
+void ModeloInstancia::Renderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 worldInvTranspose, DirectX::XMFLOAT4X4 worldViewProj,
 	DirectXC& dxd) const
 {
 	dxd.SetarParametrosPorObjetoShader3D(worldMatrix, worldInvTranspose, worldViewProj, cMaterial, cPTextura);
@@ -192,17 +192,11 @@ void Modelo::Renderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 wor
 	deviceContext->IASetVertexBuffers(0, 1, &cPVertexBuffer, &cStride, &cOffset);
 	deviceContext->IASetIndexBuffer(cPIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
-	deviceContext->DrawIndexed((UINT)cIndexNum, 0, 0);
-}
+	constexpr UINT startIndexLocation = 0;
+	constexpr UINT baseVertexLocation = 0;
+	constexpr UINT instanceCount = 0;
+	constexpr UINT startInstanceLocation = 0;
 
-void Modelo::Rerenderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 worldInvTranspose, DirectX::XMFLOAT4X4 worldViewProj,
-	DirectXC& dxd) const
-{
-	//dxd.SetarParametrosPorObjetoShader3D(worldMatrix, worldInvTranspose, worldViewProj, cMaterial, cPTextura);
-
-	ID3D11DeviceContext *deviceContext = dxd.PegarPDeviceContext();
-	deviceContext->IASetVertexBuffers(0, 1, &cPVertexBuffer, &cStride, &cOffset);
-	deviceContext->IASetIndexBuffer(cPIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-
-	deviceContext->DrawIndexed((UINT)cIndexNum, 0, 0);
+	//deviceContext->DrawIndexed((UINT)cIndexNum, startIndexLocation, baseVertexLocation);
+	deviceContext->DrawIndexedInstanced((UINT)cIndexNum, instanceCount, startIndexLocation, baseVertexLocation, startInstanceLocation);
 }

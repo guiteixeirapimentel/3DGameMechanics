@@ -8,7 +8,7 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cMouse(mouse),
 	cJoystick(joystick),
 	cam({ 0.0f, 0.0f, -5.0f, 1.0f }, { 0.0f , 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f, 0.0f, 0.0f }, dxd),
-	cFace({ 25.0f, 0.0f, 25.0f }, &dxd),
+	cFace({ 0.0f, 0.0f, 0.0f }, &dxd),
 	cPoopCubo(L"Data\\Textures\\boxTexture.png", 2.5f, 2.5f, 2.5f, dxd),
 	cMapa(50.0f, 50.0f, &dxd),
 	cMousePrecionado(false),
@@ -17,7 +17,8 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cImgGameOver("Data\\Textures\\GameOver.tex", dxd.PegarLargura() / 2.0f, dxd.PegarAltura() / 2.0f, { 0.5f, 0.5f }, &dxd),
 	cNBostas(100),
 	cBostasComidas(0),
-	cMapaBlocos(20, 64, 20, &dxd) // http://www.rastertek.com/dx11tut37.html
+	cModeloTeste(dxd, {0.0f, 0.0f, 0.0f, 0.0f}),
+	cMapaBlocos(20, 20, 20, &dxd) // http://www.rastertek.com/dx11tut37.html
 {
 	cFart = audio.CreateSound("Data\\Sounds\\farty.wav");
 	cTinkle = audio.CreateSound("Data\\Sounds\\tinkle.wav");
@@ -85,7 +86,7 @@ void Jogo::Atualizar()
 	DirectX::XMStoreFloat3(&cSpotLight.Direction, DirectX::XMVector3Normalize(DirectX::XMVectorSubtract(posOlhando, posOlho)));
 
 	cPointLight.Position = DirectX::XMFLOAT3(posCam.x, posCam.y, posCam.z);
-
+	
 	dxd.SetarParametrosPorFrameShader3D(cDirLight, cPointLight, cSpotLight, DirectX::XMFLOAT3(posCam.x, posCam.y, posCam.z));
 
 	if (cBostasComidas < cNBostas)
@@ -127,6 +128,8 @@ void Jogo::Atualizar()
 			cFart.Play(-1000);
 		}
 	}
+
+	cModeloTeste.Atualizar();
 }
 
 void Jogo::Renderizar()
@@ -137,7 +140,9 @@ void Jogo::Renderizar()
 
 	cam.Renderizar(&cFace);
 	
-	cam.Renderizar(&cMapaBlocos);
+	//cam.Renderizar(&cMapaBlocos);
+
+	cam.Renderizar(&cModeloTeste);
 
 	for (UINT i = 0; i < cBostas.size(); i++)
 	{

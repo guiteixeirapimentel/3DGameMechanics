@@ -20,6 +20,8 @@
 
 #include "MapaBlocos.h"
 
+#include "VasoPlantaBananeira.h"
+
 class Jogo
 {
 public:
@@ -55,6 +57,8 @@ private:
 	Face cFace;
 
 	Cubo cPoopCubo;
+
+	VasoPlantaBananeira cModeloTeste;
 
 	MapaBlocos cMapaBlocos;
 

@@ -4,19 +4,17 @@
 
 #include <vector>
 
-class Modelo
+class ModeloInstancia
 {
 public:
-	Modelo(DirectXC& dxd, std::string nomeArqModelo, std::wstring nomeArqTextura);
-	virtual ~Modelo();
+	ModeloInstancia(DirectXC& dxd, std::string nomeArqModelo, std::string nomeArqTextura);
+	virtual ~ModeloInstancia();
 
 	virtual void Renderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 worldInvTranspose, DirectX::XMFLOAT4X4 worldViewProj,
 		DirectXC& dxd) const;
 
-	void Rerenderizar(DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 worldInvTranspose, DirectX::XMFLOAT4X4 worldViewProj,
-		DirectXC& dxd) const;
 protected:
-	Modelo();
+	ModeloInstancia();
 
 protected:
 	ID3D11Buffer *cPVertexBuffer;
