@@ -20,7 +20,7 @@
 
 #include "MapaBlocos.h"
 
-#include "VasoPlantaBananeira.h"
+#include "PiperPA18.h"
 
 class Jogo
 {
@@ -58,7 +58,7 @@ private:
 
 	Cubo cPoopCubo;
 
-	VasoPlantaBananeira cModeloTeste;
+	PiperPA18 cPiper;
 
 	MapaBlocos cMapaBlocos;
 

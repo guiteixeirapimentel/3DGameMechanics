@@ -17,7 +17,7 @@ Jogo::Jogo(HWND hJnl, TecladoCliente& teclado, MouseClient& mouse, ControleXBCli
 	cImgGameOver("Data\\Textures\\GameOver.tex", dxd.PegarLargura() / 2.0f, dxd.PegarAltura() / 2.0f, { 0.5f, 0.5f }, &dxd),
 	cNBostas(100),
 	cBostasComidas(0),
-	cModeloTeste(dxd, {0.0f, 0.0f, 0.0f, 0.0f}),
+	cPiper(dxd, {0.0f, 0.0f, 0.0f, 0.0f}),
 	cMapaBlocos(20, 20, 20, &dxd) // http://www.rastertek.com/dx11tut37.html
 {
 	cFart = audio.CreateSound("Data\\Sounds\\farty.wav");
@@ -129,7 +129,7 @@ void Jogo::Atualizar()
 		}
 	}
 
-	cModeloTeste.Atualizar();
+	cPiper.Atualizar();
 }
 
 void Jogo::Renderizar()
@@ -142,7 +142,7 @@ void Jogo::Renderizar()
 	
 	//cam.Renderizar(&cMapaBlocos);
 
-	cam.Renderizar(&cModeloTeste);
+	cam.Renderizar(&cPiper);
 
 	for (UINT i = 0; i < cBostas.size(); i++)
 	{

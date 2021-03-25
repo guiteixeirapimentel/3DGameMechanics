@@ -33,13 +33,13 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE, LPSTR, INT)
 
 	ControleXBServer joystickServer(0);
 	ControleXBCliente joystickCliente(joystickServer);
-
-	pJogo = new Jogo(hJanela, tCliente, mCliente, joystickCliente);
-
+	
 	UpdateWindow(hJanela);
 	ShowWindow(hJanela, SW_SHOW);
-	ShowCursor(FALSE);
+	ShowCursor(TRUE);
 
+	pJogo = new Jogo(hJanela, tCliente, mCliente, joystickCliente);
+	
 	MSG msg = {};
 
 	while (msg.message != WM_QUIT)
@@ -72,7 +72,8 @@ LRESULT CALLBACK MsgProc(HWND hJanela, UINT msg, WPARAM wparam, LPARAM lparam)
 	}break;
 	case WM_SIZE:
 	{
-		pJogo->MudouTamanhoJanela();
+		if(pJogo)
+			pJogo->MudouTamanhoJanela();
 
 		RECT ret;
 		GetClientRect(hJanela, &ret);

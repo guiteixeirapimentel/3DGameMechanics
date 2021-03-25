@@ -164,6 +164,7 @@
     <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="ModeloInstancia.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="PiperPA18.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Renderizavel.cpp" />
     <ClCompile Include="Sound.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="Modelo.h" />
     <ClInclude Include="ModeloInstancia.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="PiperPA18.h" />
     <ClInclude Include="Poop.h" />
     <ClInclude Include="Renderizador.h" />
     <ClInclude Include="Renderizavel.h" />
