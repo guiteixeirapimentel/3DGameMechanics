@@ -144,6 +144,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bloco.cpp" />
+    <ClCompile Include="BlocoAr.cpp" />
+    <ClCompile Include="BlocoGrama.cpp" />
+    <ClCompile Include="BlocoPedra.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chao.cpp" />
     <ClCompile Include="ControleXB.cpp" />
@@ -152,19 +156,29 @@
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Fonte.cpp" />
     <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="GDIPlusManager.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mapa.cpp" />
+    <ClCompile Include="MapaBlocos.cpp" />
     <ClCompile Include="Modelo.cpp" />
+    <ClCompile Include="ModeloInstancia.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="PiperPA18.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Renderizavel.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Teclado.cpp" />
     <ClCompile Include="Textura.cpp" />
     <ClCompile Include="TexturedQuad.cpp" />
+    <ClCompile Include="VasoPlantaBananeira.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bloco.h" />
+    <ClInclude Include="BlocoAr.h" />
+    <ClInclude Include="BlocoGrama.h" />
+    <ClInclude Include="BlocoPedra.h" />
+    <ClInclude Include="MapaBlocos.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chao.h" />
     <ClInclude Include="ControleXB.h" />
@@ -173,10 +187,13 @@
     <ClInclude Include="Face.h" />
     <ClInclude Include="Fonte.h" />
     <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="GDIPlusManager.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Mapa.h" />
     <ClInclude Include="Modelo.h" />
+    <ClInclude Include="ModeloInstancia.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="PiperPA18.h" />
     <ClInclude Include="Poop.h" />
     <ClInclude Include="Renderizador.h" />
     <ClInclude Include="Renderizavel.h" />
@@ -184,6 +201,7 @@
     <ClInclude Include="Teclado.h" />
     <ClInclude Include="Textura.h" />
     <ClInclude Include="TexturedQuad.h" />
+    <ClInclude Include="VasoPlantaBananeira.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="2DPixelShader.hlsl">

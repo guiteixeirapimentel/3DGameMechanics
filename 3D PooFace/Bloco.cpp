@@ -1,17 +1,23 @@
-#include "Poop.h"
-#include "Face.h"
+#include "Bloco.h"
 
-Poop::Poop(DirectX::XMFLOAT4 cPos, const Cubo* pCubo)
+
+Bloco::Bloco(const std::wstring& arqTextura, DirectXC& dxd)
 	:
-	cPCubo(pCubo),
-	cPos(cPos),
-	cTempo((rand() % 255) / 255.0f)
-{}
+	cCubo(arqTextura, 1.0f, 1.0f, 1.0f, dxd)
+{
 
-Poop::~Poop()
-{}
+}
+Bloco::~Bloco()
+{
 
-void Poop::Renderizar(DirectXC* pDirectX) const
+}
+
+void Bloco::SetPosition(const DirectX::XMFLOAT4& pos)
+{
+	cPos = pos;
+}
+
+void Bloco::Renderizar(DirectXC* pDirectX) const
 {
 	DirectX::XMFLOAT4X4 worldMatrix;
 	
@@ -34,37 +40,10 @@ void Poop::Renderizar(DirectXC* pDirectX) const
 	DirectX::XMFLOAT4X4 worldViewProj;
 	DirectX::XMStoreFloat4x4(&worldViewProj, worldViewProjM);
 
-	cPCubo->Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
+	cCubo.Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
 }
 
-void Poop::Atualizar()
+bool Bloco::DeveRenderizar() const
 {
-	cPos.y += 0.02f * cosf(cTempo);
-
-	if (cTempo > 2.0f * Pi)
-	{
-		cTempo = 0.0f;
-	}
-	else
-	{
-		cTempo += 0.05f;
-	}
-
-	
-}
-
-bool Poop::TestarColisaoFace(const Face* pFace) const
-{
-	DirectX::XMVECTOR posFace = DirectX::XMLoadFloat3(&pFace->PegarPosFace());
-	DirectX::XMVECTOR posPoo = DirectX::XMLoadFloat4(&cPos);
-
-	DirectX::XMVECTOR d = DirectX::XMVectorSubtract(posFace, posPoo);
-	float dist = DirectX::XMVector3LengthSq(d).m128_f32[0];
-
-	if (dist <= powf(3.5f, 2.0f))
-	{
-		return true;
-	}
-	
-	return false;
+	return true;
 }

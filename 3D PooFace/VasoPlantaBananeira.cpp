@@ -1,24 +1,37 @@
-#include "Poop.h"
+#include "VasoPlantaBananeira.h"
 #include "Face.h"
 
-Poop::Poop(DirectX::XMFLOAT4 cPos, const Cubo* pCubo)
+VasoPlantaBananeira::VasoPlantaBananeira(DirectXC& dxd, DirectX::XMFLOAT4 cPos)
 	:
-	cPCubo(pCubo),
+	cPModelo(nullptr),
 	cPos(cPos),
-	cTempo((rand() % 255) / 255.0f)
-{}
+	cRotY(0.0f)
+{
+	cPModelo = new Modelo(
+		dxd,
+		"Data/panzerConverted.obj",
+		L"Data/panzer.jpg"
+	);
 
-Poop::~Poop()
-{}
+}
 
-void Poop::Renderizar(DirectXC* pDirectX) const
+VasoPlantaBananeira::~VasoPlantaBananeira()
+{
+	if (cPModelo) 
+	{
+		delete cPModelo;
+		cPModelo = nullptr;
+	}
+}
+
+void VasoPlantaBananeira::Renderizar(DirectXC* pDirectX) const
 {
 	DirectX::XMFLOAT4X4 worldMatrix;
-	
+
 	DirectX::XMFLOAT4 poss = { cPos.x, cPos.y, cPos.z, 1.0f };
 
 	DirectX::XMMATRIX mTransRot = DirectX::XMMatrixTranslationFromVector(DirectX::XMLoadFloat4(&poss));
-	mTransRot = DirectX::XMMatrixMultiply(DirectX::XMMatrixRotationX(0.0f), mTransRot);
+	mTransRot = DirectX::XMMatrixMultiply(DirectX::XMMatrixRotationY(cRotY), mTransRot);
 	DirectX::XMStoreFloat4x4(&worldMatrix, mTransRot);
 
 	DirectX::XMFLOAT4X4 worldInvTranspose;
@@ -34,37 +47,15 @@ void Poop::Renderizar(DirectXC* pDirectX) const
 	DirectX::XMFLOAT4X4 worldViewProj;
 	DirectX::XMStoreFloat4x4(&worldViewProj, worldViewProjM);
 
-	cPCubo->Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
+	cPModelo->Renderizar(worldMatrix, worldInvTranspose, worldViewProj, *pDirectX);
 }
 
-void Poop::Atualizar()
+void VasoPlantaBananeira::Atualizar()
 {
-	cPos.y += 0.02f * cosf(cTempo);
-
-	if (cTempo > 2.0f * Pi)
+	if (cRotY < DirectX::XM_PI*2.0f)
 	{
-		cTempo = 0.0f;
-	}
-	else
-	{
-		cTempo += 0.05f;
-	}
-
-	
-}
-
-bool Poop::TestarColisaoFace(const Face* pFace) const
-{
-	DirectX::XMVECTOR posFace = DirectX::XMLoadFloat3(&pFace->PegarPosFace());
-	DirectX::XMVECTOR posPoo = DirectX::XMLoadFloat4(&cPos);
-
-	DirectX::XMVECTOR d = DirectX::XMVectorSubtract(posFace, posPoo);
-	float dist = DirectX::XMVector3LengthSq(d).m128_f32[0];
-
-	if (dist <= powf(3.5f, 2.0f))
-	{
-		return true;
+		cRotY -= 2.0f*DirectX::XM_PI;
+		cRotY += DirectX::XM_PI / 120.0f;
 	}
 	
-	return false;
 }

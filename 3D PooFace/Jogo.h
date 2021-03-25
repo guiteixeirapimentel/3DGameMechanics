@@ -18,6 +18,10 @@
 
 #include "Sound.h"
 
+#include "MapaBlocos.h"
+
+#include "PiperPA18.h"
+
 class Jogo
 {
 public:
@@ -53,6 +57,10 @@ private:
 	Face cFace;
 
 	Cubo cPoopCubo;
+
+	PiperPA18 cPiper;
+
+	MapaBlocos cMapaBlocos;
 
 	Mapa cMapa;
 

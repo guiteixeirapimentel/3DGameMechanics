@@ -367,13 +367,13 @@ void DirectXC::CriarShaderEInputLayout()
 	SIZE_T nBytesCompiled2DVertexShaderBuffer = 0;
 	SIZE_T nBytesCompiled2DPixelShaderBuffer = 0;
 
-#if _DEBUG || DEBUG
+#if (_DEBUG || DEBUG) || 1
 
 	ID3D10Blob *vertexShaderBuffer3D = NULL;
 	ID3D10Blob *pixelShaderBuffer3D = NULL;
 
 	UINT flags1 = 0;
-	flags1 |= D3DCOMPILE_DEBUG | D3DCOMPILE_OPTIMIZATION_LEVEL0;
+	//flags1 |= D3DCOMPILE_DEBUG | D3DCOMPILE_OPTIMIZATION_LEVEL0;
 
 	//Compila Vertex Shader 3D
 	HRESULT res = D3DCompileFromFile(L"3DVertexShader.hlsl", NULL, NULL, "VS", "vs_5_0", flags1, 0, &vertexShaderBuffer3D, &mensagemErro);
@@ -452,7 +452,7 @@ void DirectXC::CriarShaderEInputLayout()
 	cPDevice->CreateInputLayout(inputLayout, numElements, pCompiled3DVertexShaderBuffer,
 		nBytesCompiled3DVertexShaderBuffer, &cPInputLayout3D);
 
-#if _DEBUG || DEBUG
+#if (_DEBUG || DEBUG) || 1
 	ReleaseCOM(vertexShaderBuffer3D);
 	ReleaseCOM(pixelShaderBuffer3D);
 #else
@@ -484,7 +484,7 @@ void DirectXC::CriarShaderEInputLayout()
 
 	cPDevice->CreateBuffer(&constBufferPorFrameDesc, NULL, &cPConstPorFrameBuffer3D);
 
-#if _DEBUG || DEBUG
+#if (_DEBUG || DEBUG) || 1
 
 	ID3D10Blob *vertexShaderBuffer2D = NULL;
 	ID3D10Blob *pixelShaderBuffer2D = NULL;
@@ -554,7 +554,7 @@ void DirectXC::CriarShaderEInputLayout()
 	cPDevice->CreateInputLayout(inputLayout2D, numElements, pCompiled2DVertexShaderBuffer,
 		nBytesCompiled2DVertexShaderBuffer, &cPInputLayout2D);
 
-#if _DEBUG || DEBUG
+#if (_DEBUG || DEBUG) || 1
 	ReleaseCOM(vertexShaderBuffer2D);
 	ReleaseCOM(pixelShaderBuffer2D);
 #else

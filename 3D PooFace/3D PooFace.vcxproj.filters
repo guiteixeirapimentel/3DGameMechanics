@@ -72,9 +72,6 @@
     <ClCompile Include="Textura.cpp">
       <Filter>Source Files\Gfx</Filter>
     </ClCompile>
-    <ClCompile Include="TexturedQuad.cpp">
-      <Filter>Source Files\Gfx\Modelos</Filter>
-    </ClCompile>
     <ClCompile Include="Cubo.cpp">
       <Filter>Source Files\Gfx\Modelos</Filter>
     </ClCompile>
@@ -107,6 +104,36 @@
     </ClCompile>
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDIPlusManager.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="Bloco.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoGrama.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoPedra.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="MapaBlocos.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocoAr.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="ModeloInstancia.cpp">
+      <Filter>Source Files\Gfx\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedQuad.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="VasoPlantaBananeira.cpp">
+      <Filter>Source Files\Jogo</Filter>
+    </ClCompile>
+    <ClCompile Include="PiperPA18.cpp">
+      <Filter>Source Files\Jogo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +193,33 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GDIPlusManager.h">
+      <Filter>Header Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="MapaBlocos.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Bloco.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoGrama.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoPedra.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocoAr.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModeloInstancia.h">
+      <Filter>Header Files\Gfx\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="VasoPlantaBananeira.h">
+      <Filter>Header Files\Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="PiperPA18.h">
+      <Filter>Header Files\Jogo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
